@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Control System</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/gen.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto&display=swap"
+        rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="tablet-simulation">
+
+        <div class="left-container">
+            <div class="left-top-controls">
+                <div id="house-image-container">
+                    <img id="gray-house" src="./resources/smol-house.jpg" alt="">
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="right-container">
+            <div class="top-controls">
+                <!-- temp flipswitch -->
+                <div class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"
+                        tabindex="0" checked>
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                        <span class="onoffswitch-inner"></span>
+
+                    </label>
+                </div>
+
+                <div id="profile-container">
+                  
+                    <img src="./resources/wonu.jpg" alt="">
+                    <p>Ken</p>
+                </div>
+                
+            </div>
+            <div class="title">
+                <p>Smart Home</p>
+                <h3>Climate System</h3>
+            </div>
+
+            <div class="inside-temp-container">
+                <div class="celsius-container">
+                    <p id="inside-temp">24</p>
+                    <p id="inside-celsius">°C</p>
+                </div>
+                <p id="inside-temp-text">Inside Temp.</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

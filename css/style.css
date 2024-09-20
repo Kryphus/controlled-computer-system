@@ -1,0 +1,113 @@
+body,
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(181, 197, 197);
+    font-family: "Poppins", sans-serif;
+}
+
+.tablet-simulation {
+    width: 800px;
+    height: 600px;
+    background-color: rgb(239, 241, 242);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Modern shadow */
+    overflow: hidden;
+
+    display: flex;
+
+}
+
+.left-container {
+    width: 70%;
+    height: 100%;
+    background-image: url('../resources/bg-house2.png');
+}
+
+.right-container {
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+
+}
+
+/* RIGHT PART OF SCREEN */
+
+/* right top controls */
+.top-controls {
+    display: flex;
+    height: 10%;
+    justify-content: space-around;
+    gap: 5rem;
+    padding: 5px;
+    align-items: center;
+    margin-left: 8px;
+
+}
+
+#profile-container {
+    height: 40px;
+    padding: 7px;
+    display: flex;
+    gap: 0.5rem;
+}
+
+#profile-container img {
+    border-radius: 50%;
+}
+
+/* title */
+
+.title {
+    margin-top: 2.8rem;
+    font-size: 1.2rem;
+    padding: 0 20px;
+}
+
+.title p {
+    font-size: 1.5rem;
+}
+
+/* inside temp */
+.inside-temp-container {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.7rem;
+    line-height: 1;
+}
+
+.celsius-container {
+    display: flex;
+}
+
+#inside-temp {
+    font-size: 3.4rem;
+    font-weight: 500;
+}
+
+#inside-celsius {
+    font-size: 1.6rem;
+}
+
+/* LEFT PART OF SCREEN */
+
+.left-top-controls {
+    height: 10%;
+}
+
+#house-image-container {
+    height: 70px;
+    width: 70px;
+    width: auto;
+    margin: 1rem;
+    
+}
+
+#gray-house {
+    height: 100%;
+    border-radius: 15px;
+}
