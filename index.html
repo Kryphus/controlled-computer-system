@@ -18,18 +18,83 @@
 
     <div class="tablet-simulation">
 
+        <!-- left container -->
         <div class="left-container">
             <div class="left-top-controls">
                 <div id="house-image-container">
                     <img id="gray-house" src="./resources/smol-house.jpg" alt="">
                 </div>
+                <div class="home-info">
+                    <h3>Home</h3>
+                    <p>696 Gilda Subdivision Blk 5</p>
+                </div>
 
+                <div class="time-info">
+                    <p id="current-time"><span id="current-seconds"></span></p>
+                    <p id="current-date"></p>
+                </div>
             </div>
+
+            <div class="system heat-cooling">
+
+                <div class="system-button">
+                    <div class="system-image-container">
+                        <img src="./resources/thermostat.png" alt="fan">
+                    </div>
+                    <div class="system-desc">
+                        <p class="system-desc-text">System</p>
+                        <p class="system-status">OFF</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="system fan">
+                <div class="fan-button">
+                    <div class="system-image-container">
+                        <img src="./resources/fannn.jpg" alt="fan">
+                    </div>
+                    <div class="system-desc">
+                        <p class="system-desc-text">Fan</p>
+                        <p class="system-status">OFF</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- specific controls -->
+            <div class="specific-controls-container">
+                <div class="spec-con living-room">
+                    <p>Living room</p>
+                    <p class="spec-con-temp">28°C</p>
+                    <div class="spec-con-controls-container">
+                        <button class="decrease-temp"><img src="./resources/prev-35.png" alt="decrease button temp"></button>
+                        <button class="increase-temp"><img src="./resources/right-35.png" alt="decrease button temp"></button>
+                    </div>
+                </div>
+
+                <div class="spec-con kitchen">
+                    <p>Kitchen</p>
+                    <p class="spec-con-temp">28°C</p>
+                    <div class="spec-con-controls-container">
+                        <button class="decrease-temp"><img src="./resources/prev-35.png" alt="decrease button temp"></button>
+                        <button class="increase-temp"><img src="./resources/right-35.png" alt="decrease button temp"></button>
+                    </div>
+                </div>
+
+                <div class="spec-con master-bedroom">
+                    <p>Bedroom</p>
+                    <p class="spec-con-temp">28°C</p>
+                    <div class="spec-con-controls-container">
+                        <button class="decrease-temp"><img src="./resources/prev-35.png" alt="decrease button temp"></button>
+                        <button class="increase-temp"><img src="./resources/right-35.png" alt="decrease button temp"></button>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 
 
-
+        <!-- right container -->
         <div class="right-container">
             <div class="top-controls">
                 <!-- temp flipswitch -->
@@ -43,11 +108,11 @@
                 </div>
 
                 <div id="profile-container">
-                  
+
                     <img src="./resources/wonu.jpg" alt="">
                     <p>Ken</p>
                 </div>
-                
+
             </div>
             <div class="title">
                 <p>Smart Home</p>
@@ -55,11 +120,30 @@
             </div>
 
             <div class="inside-temp-container">
+                <p id="inside-temp-text">Inside Temp.</p>
                 <div class="celsius-container">
                     <p id="inside-temp">24</p>
                     <p id="inside-celsius">°C</p>
                 </div>
-                <p id="inside-temp-text">Inside Temp.</p>
+
+            </div>
+
+            <div class="more-temp-container">
+                <div class="outside-temp">
+                    <div class="outside-temp-icon">
+                        <img id="outside-temp-icon-image" src="./resources/temp-hot-line.png" alt="outside temperature">
+                        <p>24°C</p>
+                    </div>
+                    <p class="more-temp-desc">Outside temp.</p>
+
+                </div>
+                <div class="humidity">
+                    <div class="humidity-icon">
+                        <img id="humidity-icon-image" src="./resources/water-percent-line.png" alt="current humidity">
+                        <p>64%</p>
+                    </div>
+                    <p class="more-temp-desc">Humidity</p>
+                </div>
             </div>
 
         </div>

@@ -24,6 +24,8 @@ html {
     width: 70%;
     height: 100%;
     background-image: url('../resources/bg-house2.png');
+    display: flex;
+    flex-direction: column;
 }
 
 .right-container {
@@ -84,30 +86,255 @@ html {
     display: flex;
 }
 
+#inside-temp-text {
+    font-size: 0.9rem
+}
+
 #inside-temp {
-    font-size: 3.4rem;
+    font-size: 3.2rem;
     font-weight: 500;
+    color: rgb(29, 69, 122);
 }
 
 #inside-celsius {
     font-size: 1.6rem;
 }
 
-/* LEFT PART OF SCREEN */
-
-.left-top-controls {
-    height: 10%;
+/* more temp info */
+.more-temp-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 0.8rem;
 }
 
+.outside-temp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.outside-temp-icon {
+    display: flex;
+    gap: 3px;
+    padding-right: 18px;
+}
+
+#outside-temp-icon-image {
+    height: 18px;
+
+}
+
+.humidity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.humidity-icon {
+    display: flex;
+    gap: 3px;
+}
+
+#humidity-icon-image {
+    height: 15px;
+
+}
+
+.more-temp-desc {
+    font-size: 0.7rem;
+}
+
+
+
+
+
+/* LEFT PART OF SCREEN */
+
+/* user info top left */
+
+.left-top-controls {
+    height: 15%;
+    display: flex;
+    align-items: center;
+}
+
+
 #house-image-container {
-    height: 70px;
-    width: 70px;
+    height: 55px;
     width: auto;
     margin: 1rem;
-    
+
 }
 
 #gray-house {
     height: 100%;
     border-radius: 15px;
+}
+
+.home-info p {
+    font-size: 0.8rem;
+}
+
+.time-info {
+    margin-left: auto;
+    padding-right: 20px;
+    text-align: end;
+    padding-bottom: 6px;
+    ;
+}
+
+#current-time {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    ;
+}
+
+#current-date {
+    font-size: 0.8rem;
+}
+
+#current-seconds {
+    font-size: 1.2rem;
+    color: rgb(102, 92, 92);
+}
+
+/* system controls */
+
+.system {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 20px;
+    margin-top: 12px;
+}
+
+.system-button,
+.fan-button {
+    height: 60px;
+    width: 160px;
+    background-color: rgba(255, 255, 255, 0.534);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.041);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.system-image-container {
+    height: 40px;
+    width: 48px;
+}
+
+.system-image-container img {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.system-desc {
+    margin-left: 10px;
+}
+
+.system-desc-text {
+    font-size: 0.8rem;
+}
+
+.system-status {
+    font-weight: 500;
+}
+
+.system-button {
+    cursor: pointer;
+}
+
+/* Cooling system background colors */
+.cooling-off {
+    background-color: lightgray;
+}
+
+.cooling-cooling {
+    background-color: lightblue;
+    /* Cool is bluish */
+}
+
+.cooling-heating {
+    background-color: rgba(240, 128, 128, 0.877);
+    /* Heating is reddish */
+}
+
+/* Fan background colors */
+.fan-off {
+    background-color: lightgray;
+}
+
+.fan-on {
+    background-color: lightgreen;
+    /* Fan ON is greenish */
+}
+
+.fan-auto {
+    background-color: lightyellow;
+    /* Fan AUTO is yellowish */
+}
+
+/* Specific part of the house controls */
+.specific-controls-container {
+    display: flex;
+    margin-top: auto;
+}
+
+.spec-con {
+    background-color: rgb(255, 255, 255);
+    height: 150px;
+    width: 150px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    padding: 5px;
+    border-radius: 15px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.spec-con-image-container {
+    height: 70px;
+    width: 190px;
+}
+
+.living-room {
+    background:
+        linear-gradient(to bottom, rgb(255, 255, 255) 15%, rgba(255, 255, 255, 0)),
+        url("../resources/living-room.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.kitchen {
+    background:
+        linear-gradient(to bottom, rgb(255, 255, 255) 15%, rgba(255, 255, 255, 0)),
+        url("../resources/kitchen.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.master-bedroom {
+    background:
+        linear-gradient(to bottom, rgb(255, 255, 255) 15%, rgba(255, 255, 255, 0)),
+        url("../resources/master-bedroom.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.spec-con-temp {
+    margin: 4px 0 18px;
+    font-size: 2.2rem;
+}
+
+.spec-con-controls-container {
+    display: flex;
+    gap: 2.5rem;
 }
