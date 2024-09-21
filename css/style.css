@@ -46,6 +46,23 @@ html {
 
 }
 
+.temp-switch-container {
+    height: 30px;
+    width: 40px;
+}
+
+#temp-switch-button {
+    color: rgb(110, 106, 106);
+    box-shadow: 0 0 20px rgba(129, 126, 126, 0.171);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
 #profile-container {
     height: 40px;
     padding: 7px;
@@ -94,11 +111,16 @@ html {
     font-weight: 500;
     color: rgb(24, 52, 90);
     text-shadow: 0px 6px 3px rgba(0, 0, 0, 0.26);
+    display: inline-block;
 }
 
 #inside-celsius {
-    font-size: 1.6rem;
-    padding-top: 5px;
+    margin: 0;
+    font-size: 2rem;
+    vertical-align: super;
+    position: relative;
+    top: -0.2em;
+    
 }
 
 /* more temp info */
@@ -170,8 +192,13 @@ html {
 }
 
 .calendar * {
-    font-size: 0.8rem;
+    font-size: 0.68rem;
     line-height: 1.2;
+    text-align: center;
+}
+
+.day-of-week {
+    font-size: 0.5rem;
 }
 
 .current-day {
@@ -222,7 +249,6 @@ html {
     align-items: center;
 }
 
-
 #house-image-container {
     height: 50px;
     width: 60px;
@@ -232,6 +258,11 @@ html {
 #gray-house {
     height: 100%;
     border-radius: 15px;
+}
+
+.home-info h3 {
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 .home-info p {
@@ -310,34 +341,28 @@ html {
     cursor: pointer;
 }
 
-/* Cooling system background colors */
 .cooling-off {
     background-color: lightgray;
 }
 
 .cooling-cooling {
     background-color: lightblue;
-    /* Cool is bluish */
 }
 
 .cooling-heating {
     background-color: rgba(240, 128, 128, 0.877);
-    /* Heating is reddish */
 }
 
-/* Fan background colors */
 .fan-off {
     background-color: lightgray;
 }
 
 .fan-on {
     background-color: lightgreen;
-    /* Fan ON is greenish */
 }
 
 .fan-auto {
     background-color: lightyellow;
-    /* Fan AUTO is yellowish */
 }
 
 /* Specific part of the house controls */

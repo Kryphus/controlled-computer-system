@@ -64,7 +64,7 @@
             <div class="specific-controls-container">
                 <div class="spec-con living-room">
                     <p>Living room</p>
-                    <p class="spec-con-temp">28°C</p>
+                    <p class="spec-con-temp comp-func">28°C</p>
                     <div class="spec-con-controls-container">
                         <button class="decrease-temp"><img src="./resources/prev-35.png"
                                 alt="decrease button temp"></button>
@@ -75,7 +75,7 @@
 
                 <div class="spec-con kitchen">
                     <p>Kitchen</p>
-                    <p class="spec-con-temp">28°C</p>
+                    <p class="spec-con-temp comp-func">31°C</p>
                     <div class="spec-con-controls-container">
                         <button class="decrease-temp"><img src="./resources/prev-35.png"
                                 alt="decrease button temp"></button>
@@ -86,7 +86,7 @@
 
                 <div class="spec-con master-bedroom">
                     <p>Bedroom</p>
-                    <p class="spec-con-temp">28°C</p>
+                    <p class="spec-con-temp comp-func">24°C</p>
                     <div class="spec-con-controls-container">
                         <button class="decrease-temp"><img src="./resources/prev-35.png"
                                 alt="decrease button temp"></button>
@@ -103,20 +103,13 @@
         <!-- right container -->
         <div class="right-container">
             <div class="top-controls">
-                <!-- temp flipswitch -->
-                <div class="onoffswitch">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"
-                        tabindex="0" checked>
-                    <label class="onoffswitch-label" for="myonoffswitch">
-                        <span class="onoffswitch-inner"></span>
 
-                    </label>
+                <div class="temp-switch-container">
+                    <button id="temp-switch-button">°C</button>
                 </div>
 
                 <div id="profile-container">
-
                     <img src="./resources/wonu.jpg" alt="">
-                    <p>Ken</p>
                 </div>
 
             </div>
@@ -128,8 +121,8 @@
             <div class="inside-temp-container">
                 <p id="inside-temp-text">Inside Temp.</p>
                 <div class="celsius-container">
-                    <p id="inside-temp">24</p>
-                    <p id="inside-celsius">°C</p>
+                    <p id="inside-temp"><span class="comp-func">24<span id="inside-celsius">°C</span></span></p>
+                    <!-- <p id="inside-celsius">°C</p> -->
                 </div>
 
             </div>
@@ -138,7 +131,7 @@
                 <div class="outside-temp">
                     <div class="outside-temp-icon">
                         <img id="outside-temp-icon-image" src="./resources/temp-hot-line.png" alt="outside temperature">
-                        <p id="outside-temp-text">24°C</p>
+                        <p id="outside-temp-text" class="comp-func">24°C</p>
                     </div>
                     <p class="more-temp-desc">Outside temp.</p>
 
@@ -160,31 +153,31 @@
                     <!-- manual lang d2 hehe -->
                     <div class="calendar-days">
                         <p>20</p>
-                        <p>Fri</p>
+                        <p class="day-of-week">Fri</p>
                     </div>
                     <div class="calendar-days">
                         <p>21</p>
-                        <p>Fri</p>
+                        <p class="day-of-week">Sat</p>
                     </div>
                     <div class="calendar-days">
                         <p>22</p>
-                        <p>Fri</p>
+                        <p class="day-of-week">Sun</p>
                     </div>
                     <div class="calendar-days current-day">
                         <p>23</p>
-                        <p>Fri</p>
+                        <p class="day-of-week">Mon</p>
                     </div>
                     <div class="calendar-days">
                         <p>24</p>
-                        <p>Fri</p>
+                        <p class="day-of-week">Tue</p>
                     </div>
                     <div class="calendar-days">
                         <p>25</p>
-                        <p>Fri</p>
+                        <p class="day-of-week">Wed</p>
                     </div>
                     <div class="calendar-days">
                         <p>26</p>
-                        <p>Fri</p>
+                        <p class="day-of-week">Thu</p>
                     </div>
                 </div>
 
@@ -198,14 +191,9 @@
                         <p class="sub-text">You do not have any activities this day.</p>
                     </div>
                 </div>
-
+                
             </div>
-
-
         </div>
-
-
-
     </div>
 
 </body>
