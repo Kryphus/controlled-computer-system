@@ -1,4 +1,4 @@
-console.log(`hello`)
+console.log(`test`)
 
 // for time
 function updateTime() {
@@ -70,6 +70,39 @@ document.querySelectorAll('.spec-con').forEach(function(container) {
 
     container.querySelector('.increase-temp').addEventListener('click', function() {
         updateTemperature(container, 1);
+    });
+});
+
+//fetch current outside temp
+const apiKey = '127ad69f71a90ab67d887d632c5283fd'; 
+const city = 'Digos';
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},PH&appid=${apiKey}&units=metric`;
+
+
+function fetchTemperature() {
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const temperature = data.main.temp;
+            document.querySelector('#outside-temp-text').textContent = `${temperature}°C`;
+        })
+        .catch(error => {
+            console.error('Error fetching weather data:', error);
+            document.getElementById('outside-temp').textContent = 'Error loading data';
+        });
+}
+
+fetchTemperature();
+setInterval(fetchTemperature, 3600000);
+
+
+const days = document.querySelectorAll('.calendar-days');
+
+
+days.forEach(day => {
+    day.addEventListener('click', function() {
+        days.forEach(d => d.classList.remove('current-day'));
+        this.classList.add('current-day');
     });
 });
 
