@@ -1,5 +1,6 @@
 console.log(`test`)
 
+// function for conversion C -> F, F -> C
 const tempSwitchButton = document.getElementById('temp-switch-button');
 const tempElements = document.querySelectorAll('.comp-func');
 
@@ -16,30 +17,45 @@ tempSwitchButton.addEventListener('click', function () {
     this.textContent = isCelsiusMode ? '°F' : '°C';
 
     tempElements.forEach(function (tempElement) {
-        let tempValue;
         const degreeSpan = tempElement.querySelector('#inside-celsius');
+        let tempValue;
 
         if (degreeSpan) {
-            tempValue = parseInt(tempElement.textContent); 
-            if (isCelsiusMode) {
-                const newTemp = celsiusToFahrenheit(tempValue);
+            tempValue = parseInt(tempElement.childNodes[0].nodeValue.trim());
+        } else {
+            tempValue = parseInt(tempElement.textContent.trim());
+        }
+
+        if (isCelsiusMode) {
+            const newTemp = celsiusToFahrenheit(tempValue);
+            if (degreeSpan) {
                 tempElement.innerHTML = `${newTemp}<span id="inside-celsius">°F</span>`;
             } else {
-                const newTemp = fahrenheitToCelsius(tempValue);
-                tempElement.innerHTML = `${newTemp}<span id="inside-celsius">°C</span>`;
+                tempElement.textContent = `${newTemp}°F`;
             }
         } else {
-            tempValue = parseInt(tempElement.textContent); 
-            if (isCelsiusMode) {
-                const newTemp = celsiusToFahrenheit(tempValue);
-                tempElement.textContent = `${newTemp}°F`;
+            const newTemp = fahrenheitToCelsius(tempValue);
+            if (degreeSpan) {
+                tempElement.innerHTML = `${newTemp}<span id="inside-celsius">°C</span>`;
             } else {
-                const newTemp = fahrenheitToCelsius(tempValue);
                 tempElement.textContent = `${newTemp}°C`;
             }
         }
     });
+
+    const insideTemp = document.querySelector('#inside-temp');
+    if (insideTemp) {
+        let insideTempValue = parseInt(insideTemp.childNodes[0].nodeValue.trim());
+        if (isCelsiusMode) {
+            const newInsideTemp = celsiusToFahrenheit(insideTempValue);
+            insideTemp.innerHTML = `${newInsideTemp}<span id="inside-celsius">°F</span>`;
+        } else {
+            const newInsideTemp = fahrenheitToCelsius(insideTempValue);
+            insideTemp.innerHTML = `${newInsideTemp}<span id="inside-celsius">°C</span>`;
+        }
+    }
 });
+
 
 
 // for time
@@ -123,7 +139,7 @@ document.querySelectorAll('.spec-con').forEach(function (container) {
 
 //fetch current outside temp
 const apiKey = '127ad69f71a90ab67d887d632c5283fd';
-const city = 'Digos';
+const city = 'City of Digos';
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},PH&appid=${apiKey}&units=metric`;
 
 
@@ -132,12 +148,15 @@ function fetchTemperature() {
         .then(response => response.json())
         .then(data => {
             let temperature = data.main.temp;
-            temperature = temperature.toFixed(1)
-            document.querySelector('#outside-temp-text').textContent = `${temperature}°C`;
+            roundedTemp = Math.round(temperature);
+            document.querySelector('#outside-temp-text').textContent = `${roundedTemp}°C`;
+
+            const insideTempElement = document.querySelector('#inside-temp');
+            insideTempElement.innerHTML = `${roundedTemp}<span id="inside-celsius">°C</span>`;
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
-            document.getElementById('outside-temp').textContent = 'Error loading data';
+            document.getElementById('outside-temp').textContent = 'Err';
         });
 }
 
@@ -152,4 +171,7 @@ days.forEach(day => {
         this.classList.add('current-day');
     });
 });
+
+
+// For simulation
 
