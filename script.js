@@ -1,11 +1,13 @@
 console.log(`test`)
 
+let systemStatus = 'OFF';
+
 // function for conversion C -> F, F -> C
 const tempSwitchButton = document.getElementById('temp-switch-button');
 const tempElements = document.querySelectorAll('.comp-func');
 
 function celsiusToFahrenheit(celsius) {
-    return Math.round((celsius * 9 / 5) + 32); 
+    return Math.round((celsius * 9 / 5) + 32);
 }
 
 function fahrenheitToCelsius(fahrenheit) {
@@ -87,14 +89,18 @@ document.querySelector('.system-button').addEventListener('click', function () {
 
     if (currentStatus === 'OFF') {
         statusElement.textContent = 'COOLING';
+        systemStatus = 'COOLING';
         this.className = 'system-button cooling-cooling';
     } else if (currentStatus === 'COOLING') {
         statusElement.textContent = 'HEATING';
+        systemStatus = 'HEATING';
         this.className = 'system-button cooling-heating';
     } else {
         statusElement.textContent = 'OFF';
+        systemStatus = 'OFF';
         this.className = 'system-button cooling-off';
     }
+    updateSimulation();
 });
 
 document.querySelector('.fan-button').addEventListener('click', function () {
@@ -116,14 +122,14 @@ document.querySelector('.fan-button').addEventListener('click', function () {
 // for specific control system
 function updateTemperature(container, change) {
     const tempElement = container.querySelector('.spec-con-temp');
-    let currentTemp = parseInt(tempElement.textContent); 
-    const isCelsius = tempElement.textContent.includes('°C'); 
+    let currentTemp = parseInt(tempElement.textContent);
+    const isCelsius = tempElement.textContent.includes('°C');
 
     currentTemp += change;
     if (isCelsius) {
-        tempElement.textContent = currentTemp + '°C'; 
+        tempElement.textContent = currentTemp + '°C';
     } else {
-        tempElement.textContent = currentTemp + '°F'; 
+        tempElement.textContent = currentTemp + '°F';
     }
 }
 
@@ -175,3 +181,32 @@ days.forEach(day => {
 
 // For simulation
 
+function updateSimulation() {
+    clearInterval(window.simulationInterval);
+    if (systemStatus === 'OFF') {
+        window.simulationInterval = setInterval(simulationOff, 10000);
+    } else {
+        console.log('status on')
+        window.simulationInterval = setInterval(simulationOn, 5000);
+    }
+}
+
+function simulationOff() {
+    const insideTempElementSim = document.querySelector('#inside-temp');
+    const currentTemp = parseInt(insideTempElementSim.textContent);
+
+    insideTempElementSim.innerHTML = `${currentTemp - 1}<span id="inside-celsius">°C</span>`;
+}
+
+function simulationOn() {
+    const insideTempElementSim = document.querySelector('#inside-temp');
+    const currentTemp = parseInt(insideTempElementSim.textContent);
+
+    if (systemStatus === 'COOLING') {
+        insideTempElementSim.innerHTML = `${currentTemp - 1}<span id="inside-celsius">°C</span>`;
+    } else if (systemStatus === 'HEATING') {
+        insideTempElementSim.innerHTML = `${currentTemp + 1}<span id="inside-celsius">°C</span>`;
+    }
+}
+
+updateSimulation();
